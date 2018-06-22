@@ -8,4 +8,12 @@ const plugin: EggPlugin = {
   // },
 };
 
-export default plugin;
+const sequelize = {
+  enable: true,
+  package: 'egg-sequelize',
+};
+
+export default {
+  ...plugin,
+  sequelize,
+};

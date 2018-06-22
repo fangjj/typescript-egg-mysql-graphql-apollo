@@ -11,8 +11,3 @@ logs/
 *.lock
 package-lock.json
 !.autod.conf.js
-
-app/**/*.map
-test/**/*.map
-config/**/*.map
-typings/
