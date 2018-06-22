@@ -1,0 +1,9 @@
+# import Query from "query.graphql"
+# import Mutation from "mutation.graphql"
+# import Subscription from "subscription.graphql"
+scalar Date
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

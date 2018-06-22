@@ -1,0 +1,18 @@
+# subscription test
+subscription {
+  userChanged {
+    message
+    data {
+      ...userFields
+    }
+  }
+}
+
+fragment userFields on User {
+  id
+  name
+  gender
+  age
+  created_at
+  updated_at
+}

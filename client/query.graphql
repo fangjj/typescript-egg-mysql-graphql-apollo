@@ -1,0 +1,54 @@
+# query test
+query {
+  getUser(id: 1) {
+    ...userFields
+    ...nestedUser
+  }
+  getUserByCurl(id: 1) {
+    ...userFields
+    ...nestedUserFetch
+  }
+  # getUsers(q: {
+  #   offset: 0
+  # }) {
+  #   count,
+  #   rows {
+  # 		... userFields
+  #     ...nestedUser
+  #     ...nestedUserFetch
+  #   }
+  # }
+}
+
+fragment nestedUser on User {
+  friends {
+    ...userFields
+    friends {
+      ...userFields
+      friends {
+        ...userFields
+      }
+    }
+  }
+}
+
+fragment nestedUserFetch on User {
+  friends_curl {
+    ...userFields
+    friends_curl {
+      ...userFields
+      friends_curl {
+        ...userFields
+      }
+    }
+  }
+}
+
+fragment userFields on User {
+  # id
+  name
+  gender
+  age
+  # created_at
+  # updated_at
+}

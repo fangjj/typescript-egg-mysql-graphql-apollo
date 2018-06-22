@@ -8,4 +8,11 @@ export default (app: Application) => {
   r.resources('user', '/api/v3/user', c.user.v3);
   r.get('/api/user/:id/friend_ids', c.user.friend.friendIds);
   r.get('/api/user/:id/friends', c.user.friend.friends);
+
+  r.post('/graphql', c.graphql.ql);
+  // 如果是开发环境，可以开启 graphiql graphql-voyager
+  if (process.env.NODE_ENV === 'development') {
+    r.get('/graphiql', c.graphql.iql);
+    r.get('/voyager', c.graphql.voyager);
+  }
 };

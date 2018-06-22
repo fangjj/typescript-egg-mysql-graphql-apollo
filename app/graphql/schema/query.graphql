@@ -1,0 +1,20 @@
+# import User from "user.graphql"
+# 查询
+type Query {
+  # 根据 ID 获取用户
+  getUser(id: Int!): User
+  # 根据 ID 用 CURL 获取用户
+  getUserByCurl(id: Int!): User
+  # 获取用户列表
+  getUsers(q: QueryBuilder): Users
+}
+input QueryBuilder {
+  # 偏移量 类似 pageNum
+  offset: Int
+  # 等价于 pageSize
+  limit: Int
+  # 排序字段
+  order_by: String
+  # enum: ['ASC', 'DESC']
+  order: String
+}

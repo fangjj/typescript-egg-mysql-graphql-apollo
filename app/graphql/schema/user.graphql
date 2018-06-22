@@ -1,0 +1,27 @@
+# 用户
+type User {
+  # ID
+  id: Int
+  # 姓名
+  name: String
+  # 性别
+  gender: String
+  # 年龄
+  age: Int
+  # 创建时间
+  created_at: Date
+  # 更新时间
+  updated_at: Date
+  # 好友 ID 列表
+  friend_ids: [Int]
+  # 好友列表
+  friends: [User]
+  # 用 CURL 获取的用户列表
+  friends_curl: [User]
+}
+# 用户列表
+type Users {
+  # 用户总数
+  count: Int
+  rows: [User]
+}

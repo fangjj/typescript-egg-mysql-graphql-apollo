@@ -1,0 +1,9 @@
+# import User from "user.graphql"
+# 订阅
+type Message {
+  message: String
+  data: User
+}
+type Subscription {
+  userChanged: Message
+}

@@ -1,0 +1,28 @@
+# mutation test
+mutation {
+  createUser(
+    name: "test01",
+    gender: "Male",
+    age: 24
+  ) {
+    ...userFields
+  }
+  updateUser(
+    id: 4,
+    name: "test02"
+  ) {
+    ...userFields
+  }
+  deleteUser(id: 4) {
+    ...userFields
+  }
+}
+
+fragment userFields on User {
+  id
+  name
+  gender
+  age
+  created_at
+  updated_at
+}
